@@ -3,10 +3,79 @@
 
 #include "pch.h"
 #include <iostream>
+#include <fstream>
+
+#include <string>
+#include "Insertion.h"
+using namespace std;
+
+string getFileContents(std::ifstream&);
+void clearScreen();
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	ifstream Reader("Logo.txt");
+	string opener = getFileContents(Reader);
+	cout << opener << endl;
+	Reader.close();
+
+
+	cout << "Enter a number to interact with a specific algorithm or data structure. \n" << endl;
+	cout << "1. Insertion Sort" << endl;
+	cout << "0. Exit Application" << endl;
+	int nav;
+	bool exitCalled = false;
+
+	
+	
+	while (!exitCalled){
+		cin >> nav;
+		switch (nav) {
+			case 1:
+				clearScreen();
+				Insertion::initArr();
+				break;
+			case 0:
+				exitCalled = true;
+				clearScreen();
+				cout << "Goodbye" << endl;
+				break;
+			default: 
+				cout << "That is not a valid option, please reenter the nav command." << endl;
+				break;
+		}
+	}
+
+
+	return 0;
+}
+
+string getFileContents(std::ifstream& File)
+{
+	std::string Lines = "";        //All lines
+
+	if (File)                      //Check if everything is good
+	{
+		while (File.good())
+		{
+			std::string TempLine;                  //Temp line
+			std::getline(File, TempLine);        //Get temp line
+			TempLine += "\n";                      //Add newline character
+
+			Lines += TempLine;                     //Add newline
+		}
+		return Lines;
+	}
+	else                           //Return error
+	{
+		return "ERROR File does not exist.";
+	}
+}
+
+void clearScreen() {
+	for (int i = 0; i < 10; i++) {
+		cout << "\n\n\n\n\n\n\n\n\n\n" << endl;
+	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

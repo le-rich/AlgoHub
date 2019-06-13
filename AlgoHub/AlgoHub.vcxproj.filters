@@ -13,9 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Text Files">
+      <UniqueIdentifier>{601dc10d-0855-4987-a0a3-16aac2b75e25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sorting Algorithms">
+      <UniqueIdentifier>{e548e11a-1d14-4661-ab5d-d67eb9fac724}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Insertion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -26,5 +38,18 @@
     <ClCompile Include="AlgoHub.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Insertion.cpp">
+      <Filter>Source Files\Sorting Algorithms</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AlgoHub.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\Desktop\Logo.txt">
+      <Filter>Source Files\Text Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
