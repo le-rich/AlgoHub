@@ -7,6 +7,7 @@
 
 #include <string>
 #include "Insertion.h"
+#include "Selection.h"
 using namespace std;
 
 string getFileContents(std::ifstream&);
@@ -22,6 +23,7 @@ int main()
 
 	cout << "Enter a number to interact with a specific algorithm or data structure. \n" << endl;
 	cout << "1. Insertion Sort" << endl;
+	cout << "2. Selection Sort" << endl;
 	cout << "0. Exit Application" << endl;
 	int nav;
 	bool exitCalled = false;
@@ -34,6 +36,10 @@ int main()
 			case 1:
 				clearScreen();
 				Insertion::initArr();
+				break;
+			case 2:
+				clearScreen();
+				Selection::initArr();
 				break;
 			case 0:
 				exitCalled = true;
